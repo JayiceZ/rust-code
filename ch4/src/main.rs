@@ -10,6 +10,12 @@ fn main() {
     func3(&mut s);
     println!("{}",s);
 
+
+    let index=func4(&s);
+    println!("{}",index);
+
+    func5(&s[0..2]);
+    func5(&s);
 }
 
 #[warn(dead_code)]
@@ -26,4 +32,24 @@ fn func3(a:&mut String){
     println!("{}",a);
     a.push_str("123");
     println!("{}",a);
+}
+
+fn func4(a:&String)->usize{
+    let bytes=a.as_bytes();
+    for  (i,&item)in bytes.iter().enumerate() {
+        if item== b' '{
+            return i;
+        }
+    }
+    a.len()
+}
+
+fn func5(a:&str)->usize{
+    let bytes=a.as_bytes();
+    for  (i,&item)in bytes.iter().enumerate() {
+        if item== b' '{
+            return i;
+        }
+    }
+    a.len()
 }
