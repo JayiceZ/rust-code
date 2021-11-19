@@ -1,6 +1,19 @@
+#[derive(Debug)]
 struct Student {
     name: String,
     age:u8,
+}
+
+impl Student {
+    fn check_myself(&self){
+        println!("{:?}",self);
+    }
+    fn new(name:String)->Student{
+        Student{
+            name,
+            age:21
+        }
+    }
 }
 
 fn main() {
@@ -17,6 +30,14 @@ fn main() {
 
     println!("{}",&student.name);
     println!("{}",&student2.name);
+
+    println!("{:?}",student);
+
+    check_student(&student2);
+
+
+    let new_student=Student::new(String::from("new born jayice"));
+    new_student.check_myself();
 }
 
 fn build_student(name:String)->Student{
@@ -24,4 +45,8 @@ fn build_student(name:String)->Student{
         name,
         age:21
     }
+}
+
+fn check_student(stu:&Student){
+    println!("{:?}",stu);
 }
