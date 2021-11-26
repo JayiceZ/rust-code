@@ -1,5 +1,5 @@
 [package]
-name = "lib"
+name = "alloc_"
 version = "0.1.0"
 authors = ["Jayice <1185430411@qq.com>"]
 edition = "2018"
